@@ -8,18 +8,19 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
+const li = document.getElementById("lista-de-productos")  //cambiado nombre de las variables y el getElementById
+const $i = document.querySelector('input'); //cambiado nombre y quitado el . en input
+
 
 for (let i = 0; i < productos.length; i++) {
-  var d = document.createElement("div")
+  const d = document.createElement("div")
   d.classList.add("producto")
 
-  var ti = document.createElement("p")
+  const ti = document.createElement("p")
   ti.classList.add("titulo")
   ti.textContent = productos[i].nombre
   
-  var imagen = document.createElement("img");
+  const imagen = document.createElement("img");
   imagen.setAttribute('src', productos[i].img);
 
   d.appendChild(ti)
@@ -29,7 +30,7 @@ for (let i = 0; i < productos.length; i++) {
 }
 
 displayProductos(productos)
-const botonDeFiltro = document.querySelector("button");
+ const botonDeFiltro = document.querySelector("button");
 
 botonDeFiltro.onclick = function() {
   while (li.firstChild) {
